@@ -34,7 +34,7 @@ export const getDb = async () => {
   // connect to DB and version we want to use
   const jateDb = await openDB('jate', 1);
   // make new transaction...need to specify the DB we are posting to and the data privileges. 
-  const tx = jateDb.transaction('jate', 'readwrite');
+  const tx = jateDb.transaction('jate', 'readonly');
   // open the object store
   const objStore = tx.objectStore('jate');
   // use the .add() method to pass in content
